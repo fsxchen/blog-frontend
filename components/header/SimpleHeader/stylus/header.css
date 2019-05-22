@@ -1,0 +1,198 @@
+html {
+  position: relative;
+}
+body {
+  position: relative;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #fff;
+  padding-top: 50px;
+  min-height: 100vh;
+}
+@media screen and (min-width: 1200px) {
+  body {
+    padding-top: 60px;
+  }
+}
+#header {
+  position: fixed;
+  padding: 0 50px;
+  width: 100%;
+  top: 0;
+  border-bottom: 1px solid #f0f0f0;
+  background-color: rgba(255,255,255,0.9);
+  transition: background-color 0.3s ease-in-out;
+  z-index: 11;
+}
+#header #logo {
+  display: inline-block;
+  font-size: 1.5em;
+  height: 60px;
+  line-height: 60px;
+  color: #2c3e50;
+  font-weight: 500;
+}
+#header #logo img {
+  vertical-align: middle;
+  margin-right: 6px;
+  width: 40px;
+  height: 40px;
+}
+#header #nav {
+  float: right;
+  height: 60px;
+  line-height: 60px;
+  list-style-type: none;
+}
+#header #nav > li {
+  position: relative;
+  display: inline-block;
+}
+#header #nav .nav-dropdown-container:hover > .nav-dropdown {
+  display: block;
+}
+#header #nav .nav-dropdown-container > .nav-dropdown {
+  top: 60px;
+  left: 0;
+}
+#header #nav .nav-dropdown-container > .nav-dropdown li {
+  position: relative;
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  background-color: #fff;
+  overflow: visible;
+}
+#header #nav .nav-dropdown-container > .nav-dropdown li:hover > .nav-dropdown {
+  display: block;
+}
+#header #nav .nav-dropdown-container > .nav-dropdown li > .nav-dropdown {
+  top: -1px;
+  left: 100%;
+  max-height: calc(100vh - 60px);
+  overflow-y: auto;
+}
+#header #nav .nav-dropdown-container > .nav-dropdown li > .nav-dropdown > li {
+  display: block;
+  position: relative;
+  height: 40px;
+  line-height: 40px;
+}
+#header #nav .nav-dropdown {
+  position: absolute;
+  display: none;
+  box-sizing: border-box;
+  text-align: left;
+  border-left: 1px solid #eee;
+  border-right: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  border-top: 1px solid #eee;
+  white-space: nowrap;
+}
+#header #nav a.nav-link {
+  display: block;
+  color: #4f4f4f;
+  font-size: 16px;
+  font-weight: 300;
+  padding: 0 20px;
+  text-decoration: none;
+  cursor: pointer;
+}
+#header #nav a.nav-link .arrow {
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: -1px;
+  margin-left: 6px;
+  margin-right: -14px;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid #ccc;
+}
+#header #nav a.nav-link:hover {
+  text-decoration: underline;
+  color: #409eff;
+}
+#header #nav a.nav-link:hover:not(.current) {
+  border-bottom: none;
+}
+#header #nav a.nav-link.active {
+  border-bottom: none;
+  color: #409eff;
+}
+#header #nav a.nav-link.active::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 5px solid #409eff;
+  border-top: 3px solid transparent;
+  border-bottom: 2px solid transparent;
+  position: absolute;
+  top: 50%;
+  margin-top: -4px;
+  left: 8px;
+}
+.search-query {
+  height: 30px;
+  line-height: 30px;
+  box-sizing: border-box;
+  padding: 0 15px 0 30px;
+  border: 1px solid #e3e3e3;
+  color: #2c3e50;
+  outline: none;
+  border-radius: 15px;
+  transition: border-color 0.2s ease;
+  background: #fff url("./../../../assets/search.png") 8px 5px no-repeat;
+  background-size: 20px;
+  vertical-align: middle !important;
+}
+.search-query:focus {
+  border-color: #409eff;
+}
+#mobile-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  background-color: #fff;
+  z-index: 11;
+  display: none;
+  box-shadow: 0 0 2px rgba(0,0,0,0.25);
+}
+#mobile-bar .menu-button {
+  position: absolute;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  top: calc((50px - 30px) / 2);
+  left: 12px;
+  background: url("./../../../assets/menu.png") center center no-repeat;
+  background-size: 24px;
+}
+#mobile-bar .logo {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: url("./../../../assets/logo.png") center center no-repeat;
+  top: calc((50px - 30px) / 2);
+  left: 50%;
+  margin-left: -15px;
+  background-size: 30px;
+}
+@media screen and (max-width: 1200px) {
+  body {
+    -webkit-text-size-adjust: none;
+    font-size: 14px;
+  }
+  #header {
+    display: none;
+  }
+  #mobile-bar {
+    display: block;
+  }
+}

@@ -1,0 +1,109 @@
+.clearfix {
+  display: inline-block;
+}
+.clearfix:after {
+  display: block;
+  content: ".";
+  height: 0;
+  line-height: 0;
+  clear: both;
+  visibility: hidden;
+}
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5) {
+  .border-1px::after {
+    -webkit-transform: scaleY(0.7);
+    transform: scaleY(0.7);
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2) {
+  .border-1px::after {
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+  }
+}
+body,
+html {
+  font-weight: 300;
+  font-family: Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial;
+}
+.layout-content {
+  width: auto;
+}
+@media only screen and (max-width: 768px) {
+  .layout-content {
+    margin: 0 5px 0 5px;
+    padding-top: 5px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .layout-content {
+    margin: 0 10px 0 10px;
+    padding-top: 10px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .layout-content {
+    margin: 0 35px 0 35px;
+    padding-top: 15px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .layout-content {
+    width: 1200px;
+    margin: 0 auto 15px;
+    padding-top: 15px;
+  }
+  .layout-content .layout-left,
+  .layout-content .layout-right {
+    padding: 0;
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: 768px) {
+  .layout-content .layout-left,
+  .layout-content .layout-right {
+    padding: 0;
+  }
+}
+@media screen and (min-width: 1200px) and (min-width: 768px) {
+  .layout-content .layout-left,
+  .layout-content .layout-right {
+    padding: 0;
+  }
+}
+@media screen and (min-width: 1200px) and (min-width: 992px) {
+  .layout-content .layout-left,
+  .layout-content .layout-right {
+    padding: 0 7.5px;
+  }
+}
+@media screen and (min-width: 1200px) and (min-width: 1200px) {
+  .layout-content .layout-left,
+  .layout-content .layout-right {
+    padding: 0 7.5px;
+  }
+}
+.modal-title {
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  padding-bottom: 10px;
+}
+.modal-message {
+  font-size: 16px;
+  line-height: 28px;
+  text-align: center;
+  padding-bottom: 15px;
+}
+.modal-input {
+  padding: 0 20px;
+}
+.modal-image {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+}
+.modal-desc {
+  font-size: 17px;
+  margin-top: 15px;
+  text-align: center;
+}
