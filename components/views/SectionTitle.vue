@@ -78,6 +78,9 @@
       menuTitle(menu) {
         return menu.selected ? (menu.selectedTitle !== undefined ? this.$t(menu.selectedTitle) : this.$t(menu.title)) : this.$t(menu.title);
       },
+      rootRouterLink(to) {
+        return `/${to.name}`
+      },
       refresh() {
         this.copiedMenus = undefined;
         this.$emit('refresh');

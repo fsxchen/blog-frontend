@@ -102,6 +102,34 @@ module.exports = {
     likes: '赞',
     authTip: '该图集已加密，您需要输入阅读密码'
   },
+  book: {
+    typeName: '图书',
+    read: '阅读',
+    comments: '评论',
+    likes: '赞',
+    authTip: '该图书文章已加密，您需要输入阅读密码',
+    filter: {
+      mostComment: '评论最多',
+      hot: '最热',
+      recommend: '推荐'
+    },
+    author: '作者',
+    publisher: '出版社',
+    publishDate: '出版日期',
+    pages: '页数',
+    rating: '评分',
+    desc: '简介',
+    readDone: '已读',
+    reading: '正在阅读',
+    noRead: '未读',
+    noteDone: '笔记已完成',
+    showToc: '展开查看所有目录',
+    hideToc: '收起目录',
+    bookInfo: '图书信息',
+    readCatelog: '读书目录',
+    catelog: '原书目录',
+    readThink: '读后感'
+  },
   others: {
     bookTitle: '图书',
     bookNoteTitle: '笔记',

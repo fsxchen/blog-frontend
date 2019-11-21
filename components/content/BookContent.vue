@@ -1,5 +1,6 @@
 <template>
-  <div class="book-overview-content layout-content" v-if="Object.keys(bookDoubanInfo).length > 0">
+  <!-- <div class="book-overview-content layout-content" v-if="Object.keys(bookDoubanInfo).length > 0"> -->
+  <div class="book-overview-content layout-content">
     <Row v-if="!needAuth">
       <i-col :xs="24" :sm="24" :md="24" :lg="17">
         <div class="layout-left">
@@ -15,17 +16,17 @@
               </div>
               <div class="info">
                 <p class="title">{{ book[resolveI18N('title')] }}</p>
-                <p class="desc"><span>{{ $t('book.author') }}：</span>{{ bookDoubanInfo.author.join(' ') }}</p>
+                <!-- <p class="desc"><span>{{ $t('book.author') }}：</span>{{ bookDoubanInfo.author.join(' ') }}</p> -->
                 <p class="desc"><span>{{ $t('book.publisher') }}：</span>{{ bookDoubanInfo.publisher }}</p>
                 <p class="desc"><span>{{ $t('book.publishDate') }}：</span>{{ bookDoubanInfo.publish_date }}</p>
                 <p class="desc"><span>{{ $t('book.pages') }}：</span>{{ bookDoubanInfo.pages }}</p>
-                <p class="desc"><span>{{ $t('book.rating') }}：</span>
+                <!-- <p class="desc"><span>{{ $t('book.rating') }}：</span>
                   <i-rate v-model="bookDoubanInfo.rating.average * 0.5" :allowHalf="true"
                           :disabled="true"></i-rate>
-                </p>
-                <Tag type="border" v-for="tag in bookDoubanInfo.tags" :key="tag.name"
+                </p> -->
+                <!-- <Tag type="border" v-for="tag in bookDoubanInfo.tags" :key="tag.name"
                        class="border-tag">{{ tag.name }}
-                </Tag>
+                </Tag> -->
               </div>
               <div class="rating"></div>
             </div>
@@ -270,7 +271,7 @@
       refreshContent() {
         this.$nextTick(() => {
           // 添加图片前缀
-          this.resolveImageTagsUrl(this.$refs.book.querySelectorAll('img'));
+          // this.resolveImageTagsUrl(this.$refs.book.querySelectorAll('img'));
           this.addTocScrollSpy();
         });
       },
@@ -329,8 +330,8 @@
 </script>
 
 <style lang="stylus" type="text/stylus" rel="stylesheet/stylus">
-  @import "/assets/style/theme.styl";
-  @import "/assets/style/article.styl";
+  @import "../../assets/style/theme.styl";
+  @import "../../assets/style/article.styl";
 
   .book-overview-content
     .book-infos

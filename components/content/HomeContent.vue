@@ -34,11 +34,11 @@
             </Row>
           </div>
           <!-- 图书 -->
-          <section-title v-if="this.specialCategory('readings') !== undefined && books.length > 0"
-                         :mainTitle="this.specialCategory('readings')[resolveI18N('name')]"
-                         :subTitle="this.specialCategory('readings').en_name"
+          <section-title v-if="this.specialCategory('books') !== undefined && books.length > 0"
+                         :mainTitle="this.specialCategory('books')[resolveI18N('name')]"
+                         :subTitle="this.specialCategory('books').en_name"
                          :menus="booksTitleMenus"
-                         :to="{'name': this.specialCategory('readings').category_type}"
+                         :to="{'name': this.specialCategory('books').category_type}"
                          :withRefresh="true"
                          :withTimeSelect="false"
                          @refresh="refreshBooks"

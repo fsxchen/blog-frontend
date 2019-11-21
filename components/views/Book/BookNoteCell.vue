@@ -134,6 +134,8 @@
         }
       },
       bookTags: function () {
+        console.log(this.bookNote)
+        if (!this.bookNote.book.book_tags) {return ''}
         return this.bookNote.book.book_tags.split('，').map((tagName) => { return {name: tagName}; });
       }
     },

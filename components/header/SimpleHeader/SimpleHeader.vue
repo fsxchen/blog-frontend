@@ -7,12 +7,12 @@
         <img :src="siteInfo.icon">
         <!-- </router-link> -->
         <transition name="fade">
-          <div class="search-area" v-show="showMobileSearchView">
+          <!-- <div class="search-area" v-show="showMobileSearchView">
             <search-view></search-view>
-          </div>
+          </div> -->
         </transition>
         <!-- <a class="menu-button" @click="showMobileMenu"></a -->
-        <a class="search-button" @click="showSearchView"></a>
+        <!-- <a class="search-button" @click="showSearchView"></a> -->
       </div>
       <div id="header" class="show">
         <router-link id="logo" to="/">
@@ -24,9 +24,9 @@
         </router-link>
         <ul id="nav">
           <!-- 搜索框 -->
-          <li class="search-area">
+          <!-- <li class="search-area">
             <search-view></search-view>
-          </li>
+          </li> -->
           <!-- 类别导航 -->
           <li
             class="nav-dropdown-container"
@@ -113,8 +113,6 @@ export default {
     ]);
   },
   mounted() {
-    console.log("mounted");
-    console.log(this.$store + "..x.");
     // // if (!this.$store.state.base.siteInfo)
     this.getSiteInfo();
     // // if (!this.$store.state.base.allCategorysInfo)
@@ -143,7 +141,6 @@ export default {
     rootRouterLink(category) {
       let router = {};
       router.name = category.category_type;
-      console.log('xx', router.name, '..')
       return `/${router.name}`;
     },
     routerLink(category) {

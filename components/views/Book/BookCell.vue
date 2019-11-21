@@ -8,9 +8,13 @@
             <i-tool-tip placement="right" :content="$t('book.authTip')" v-if="book.need_auth">
               <Icon type="android-lock" color="#FA5555" v-if="book.need_auth"></Icon>&nbsp;
             </i-tool-tip>
-            <a @click.prevent="gotoPostDetail(book)" :href="`${book.post_type}/${book.id}`">
+            <nuxt-link @click.prevent="gotoPostDetail(book)" :to="
+                    localePath({
+                      name: 'books-id',
+                      params: {id: book.id}
+                    })">
               <Icon type="ios-book"></Icon>&nbsp;&nbsp;{{book[resolveI18N('title')]}}
-            </a>
+            </nuxt-link>
             <span class="special" v-if="book.index > 0" :title="$t('others.stickyTip')">{{ $t('others.sticky') }}</span>
           </h4>
           <div class="tags">
@@ -19,9 +23,13 @@
             </Tag>
           </div>
           <p class="desc">{{book[resolveI18N('desc')] | textLineBreak(70) }}
-            <a @click.prevent="gotoPostDetail(book)" :href="`${book.post_type}/${book.id}`"> View More
+            <nuxt-link @click.prevent="gotoPostDetail(book)" :to="
+                    localePath({
+                      name: 'books-id',
+                      params: {id: book.id}
+                    })"> View More
               <Icon type="arrow-right-b"></Icon>
-            </a>
+            </nuxt-link>
           </p>
           <p class="operate_info">
             <span class="publish-time"><a>{{ book.add_time | socialDate }}</a></span>
@@ -99,10 +107,10 @@
     methods: {
       gotoPostDetail(post) {
         checkPostAuth.call(this, post, '提示', '该文章已加密，您需要输入阅读密码', () => {
-          this.$router.push({name: post.post_type, params: {id: post.id}});
+          this.$router.push({name: post.post_type+'s', params: {id: post.id}});
         }, (encryptedBrowseAuth) => {
           this.$router.push({
-            name: post.post_type,
+            name: post.post_type + 's',
             params: {id: post.id},
             query: {browse_auth: encryptedBrowseAuth}
           });
