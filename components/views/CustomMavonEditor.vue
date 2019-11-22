@@ -310,32 +310,33 @@
           return;
         }
         console.log('replyToComment', this.replyToComment);
-        if (!(loadFromLocal('comment_auth', 'email', '') === this.email &&
-            loadFromLocal('comment_auth', 'verified', false) &&
-            loadFromLocal('comment_auth', 'author_id', undefined) !== undefined &&
-            loadFromLocal('comment_auth', 'nick_name', undefined) !== undefined)) {
-          // 该邮箱在本地没有评论记录,需要验证邮箱
-          this.publishing = true;
-          let that = this;
-          API.getEmailCode({
-            nick_name: this.nickName,
-            email: this.email
-          }).then((response) => {
-            this.checkEmail();
-          }).catch((error) => {
-            console.log(error.data.email[0]);
-            that.$Notice.error({
-              title: '验证码发送失败',
-              desc: error.data.email[0]
-            });
-            // 关闭loading状态
-            that.publishing = false;
-          });
-        } else {
-          // 该邮箱在本地有评论记录,直接评论
-          this.guest = loadFromLocal('comment_auth', 'author_id', undefined);
-          this.publish();
-        }
+        this.publish();
+        // if (!(loadFromLocal('comment_auth', 'email', '') === this.email &&
+        //     loadFromLocal('comment_auth', 'verified', false) &&
+        //     loadFromLocal('comment_auth', 'author_id', undefined) !== undefined &&
+        //     loadFromLocal('comment_auth', 'nick_name', undefined) !== undefined)) {
+        //   // 该邮箱在本地没有评论记录,需要验证邮箱
+        //   this.publishing = true;
+        //   let that = this;
+        //   API.getEmailCode({
+        //     nick_name: this.nickName,
+        //     email: this.email
+        //   }).then((response) => {
+        //     this.checkEmail();
+        //   }).catch((error) => {
+        //     console.log(error.data.email[0]);
+        //     that.$Notice.error({
+        //       title: '验证码发送失败',
+        //       desc: error.data.email[0]
+        //     });
+        //     // 关闭loading状态
+        //     that.publishing = false;
+        //   });
+        // } else {
+        //   // 该邮箱在本地有评论记录,直接评论
+        //   this.guest = loadFromLocal('comment_auth', 'author_id', undefined);
+        //   this.publish();
+        // }
       },
       checkEmail() {
         let that = this;

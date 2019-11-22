@@ -6,9 +6,9 @@
           <Row :gutter="8">
             <i-col :xs="cellLeftSpan('xs')" :sm="cellLeftSpan('sm')" :md="cellLeftSpan('md')"
                     :lg="cellLeftSpan('lg')" :xl="cellLeftSpan('xl')">
-              <div class="avatar">
+              <!-- <div class="avatar">
                 <img :src="siteImageBaseUrl + '/comment/avatar/' + avatarImage(comment.author)" alt="">
-              </div>
+              </div> -->
             </i-col>
             <i-col :xs="cellRightSpan('xs')" :sm="cellRightSpan('sm')" :md="cellRightSpan('md')"
                     :lg="cellRightSpan('lg')" :xl="cellRightSpan('xl')">
