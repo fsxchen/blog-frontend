@@ -2,7 +2,7 @@ const pkg = require('./package')
 const { I18N } = require('./i18n/i18n')
 
 module.exports = {
-  mode: 'universal',
+  mode: 'spa',
 
   /*
   ** Headers of the page
