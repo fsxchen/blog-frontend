@@ -131,7 +131,7 @@
           params: {
             level_min: 1,
             level_max: 3,
-            top_category: 55,
+            // top_category: 55,
             page_size: 12
           }
         }).then((response) => {

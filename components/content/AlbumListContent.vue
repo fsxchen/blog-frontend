@@ -137,10 +137,11 @@
           params: {
             'level_min': 1,
             'level_max': 1,
-            'id': 55
+            // 'id': 55
           }
         }).then((response) => {
           this.categorys = response.data.results;
+
         }).catch((error) => {
           console.log(error);
         });
@@ -163,7 +164,7 @@
           }
           API.getAlbumBaseInfo({
             params: {
-              top_category: this.top_category,
+              // top_category: this.top_category,
               ordering: orderings.toString(),
               is_recommend: false,
               time_min: this.selectedDateRange[0],

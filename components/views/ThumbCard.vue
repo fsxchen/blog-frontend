@@ -15,9 +15,14 @@
           <i-tool-tip placement="right" :content="$t('album.authTip')" v-if="album.need_auth">
             <Icon type="android-lock" color="#FA5555" v-if="album.need_auth"></Icon>
           </i-tool-tip>
-          <a @click.prevent="gotoPostDetail(album)" :href="`${album.post_type}/${album.id}`">
+          <nuxt-link @click.prevent="gotoPostDetail(album)"
+            :to="localePath({
+              name: 'albums-id',
+              params: {id: album.id}
+            })"
+          >
             {{ album.title }}
-          </a>
+          </nuxt-link>
         </h4>
         <p class="info"><span class="author"><a>By / {{ album.author }}</a></span></p>
         <p class="info"><span class="publish-time"><a>At time / {{ album.add_time | socialDate}}</a></span></p>

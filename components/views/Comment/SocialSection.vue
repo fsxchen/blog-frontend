@@ -1,6 +1,6 @@
 <template>
   <div class="social-section" id="comments" v-if="article != undefined" ref="socialSection">
-    <i-spin size="large" v-if="showSpin" fix style="z-index: 99;"></i-spin>
+    <Spin size="large" v-if="showSpin" fix style="z-index: 99;"></Spin>
     <div class="comment-area">
       <div class="editor" :class="{spread: spreadEditor}">
         <custom-mavon-editor :post="article"
@@ -74,7 +74,8 @@
       getCommentInfo() {
         API.getCommentInfo({
           params: {
-            post_id: this.article.id,
+            // post_id: this.article.id,
+            post_id: this.$route.params.id,
             comment_level: 0,
             limit: COMMENT_DEFAULT_LIMIT,
             offset: this.comments.length

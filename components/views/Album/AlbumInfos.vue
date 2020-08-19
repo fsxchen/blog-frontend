@@ -7,7 +7,7 @@
     </p>
     <div class="author">
       <a href="">
-        <img src="../../../assets/logo-small.png" alt="">
+        <!-- <img src="../../../assets/logo-small.png" alt=""> -->
         <div class="right">
           <p class="name">{{ album.author }}</p>
           <p class="time">{{ album.add_time | socialDate }}</p>
@@ -24,9 +24,9 @@
     <div class="picture" v-if="currentPicture != undefined">
       <p class="title">{{ currentPicture.title }}</p>
       <p class="desc">{{ currentPicture.desc }}</p>
-      <p class="device">{{ currentPicture.camera.device }}</p>
-      <p class="version">{{ currentPicture.camera.version }}</p>
-      <p class="environment">{{ currentPicture.camera.environment }}</p>
+      <!-- <p class="device">{{ currentPicture.camera.device }}</p> -->
+      <!-- <p class="version">{{ currentPicture.camera.version }}</p> -->
+      <!-- <p class="environment">{{ currentPicture.camera.environment }}</p> -->
     </div>
     <div class="social">
       <social-section :theme="'dark-theme'" :article="album"></social-section>
@@ -83,7 +83,7 @@
 </script>
 
 <style lang="stylus" type="text/stylus" rel="stylesheet/stylus">
-  @import "..//assets/style/theme.styl";
+  @import "../../../assets/style/theme.styl";
 
   .album-infos
     width 100%

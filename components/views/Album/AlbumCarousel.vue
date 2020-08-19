@@ -113,7 +113,7 @@
 </script>`
 
 <style lang="stylus" type="text/stylus" rel="stylesheet/stylus">
-  @import "..//assets/style/theme.styl";
+  @import "../../../assets/style/theme.styl";
 
   .album-carousel
     position: relative
