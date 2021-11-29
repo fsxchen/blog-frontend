@@ -17,7 +17,7 @@
     "crypto-js": "^3.3.0",
     "iview": "^3.4.1",
     "koa": "^2.6.2",
-    "mavon-editor": "^2.7.4",
+    "mavon-editor": "^2.8.2",
     "nuxt": "^2.4.0",
     "nuxt-i18n": "^5.12.3",
     "tocbot": "^4.6.0",
